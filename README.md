@@ -3,13 +3,17 @@
 A tiny browser game about echolocation, written in vanilla JavaScript — no
 dependencies, no build step.
 
+**[Play it in your browser](https://fede-berga.github.io/eco/)**
+
+![ECO gameplay: after the title screen, a glowing dot in a pitch-black cave emits pings; each expanding ring outlines the cave walls it reaches, and the outlines fade a few seconds later as the dot moves on.](docs/demo.gif)
+
 You are a small creature lost in a pitch-black cave. Press **SPACE** to emit a
 ping: the sound wave expands outward and briefly lights up the walls it
 touches. When a wave crosses the exit you hear a chime — panned toward it,
 louder the closer you are. Navigate by memory and by ear.
 
 From level 2 onward something else lives in the cave. It is blind too, but it
-hears every ping you emit — and it comes looking. Pings reveal it only as a
+hears your pings through the rock — and it comes looking. Pings reveal it only as a
 snapshot of where it *was*.
 
 ## Run
@@ -28,14 +32,14 @@ Then visit http://localhost:8123.
 | --- | --- |
 | WASD / arrows | move |
 | SPACE | ping |
-| R | regenerate the current level |
+| R twice | regenerate the current level |
 
 ## How it works
 
 - **Cave generation** — cellular automata smoothed over random noise; only the
-  largest connected region is kept. Start and exit are placed at the two ends
-  of the cave's graph diameter (double BFS), so the walk is always the longest
-  one available.
+  largest connected region is kept. Start and exit are placed far apart with a
+  double BFS (the farthest cell from an arbitrary one, then the farthest cell
+  from that), a cheap approximation of the cave's graph diameter.
 - **Ping** — 540 rays are raycast on the grid (DDA) when the ping is emitted;
   each hit is revealed only when the expanding wavefront actually reaches it,
   so the ring visually gets absorbed where it meets rock.
@@ -44,3 +48,15 @@ Then visit http://localhost:8123.
   close range. Its proximity is telegraphed by your own heartbeat.
 - **Audio** — everything is synthesized live with WebAudio oscillators; there
   are no sound files.
+
+## Limitations
+
+- Keyboard only: there are no mouse or touch controls, so phones and tablets
+  without a keyboard can't play it.
+- Sound is part of the game: the panned exit chime is your main clue to where
+  the exit is, so play with audio on.
+- The in-game text is in Italian.
+
+## License
+
+[MIT](LICENSE)
