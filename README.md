@@ -3,6 +3,10 @@
 A tiny browser game about echolocation, written in vanilla JavaScript — no
 dependencies, no build step.
 
+**[Play it in your browser](https://fede-berga.github.io/eco/)**
+
+![ECO gameplay: after the title screen, a glowing dot in a pitch-black cave emits pings; each expanding ring outlines the cave walls it reaches, and the outlines fade a few seconds later as the dot moves on.](docs/demo.gif)
+
 You are a small creature lost in a pitch-black cave. Press **SPACE** to emit a
 ping: the sound wave expands outward and briefly lights up the walls it
 touches. When a wave crosses the exit you hear a chime — panned toward it,
@@ -44,3 +48,15 @@ Then visit http://localhost:8123.
   close range. Its proximity is telegraphed by your own heartbeat.
 - **Audio** — everything is synthesized live with WebAudio oscillators; there
   are no sound files.
+
+## Limitations
+
+- Keyboard only: there are no mouse or touch controls, so phones and tablets
+  without a keyboard can't play it.
+- Sound is part of the game: the panned exit chime is your main clue to where
+  the exit is, so play with audio on.
+- The in-game text is in Italian.
+
+## License
+
+[MIT](LICENSE)
