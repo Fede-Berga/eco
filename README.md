@@ -28,14 +28,14 @@ Then visit http://localhost:8123.
 | --- | --- |
 | WASD / arrows | move |
 | SPACE | ping |
-| R | regenerate the current level |
+| R twice | regenerate the current level |
 
 ## How it works
 
 - **Cave generation** — cellular automata smoothed over random noise; only the
-  largest connected region is kept. Start and exit are placed at the two ends
-  of the cave's graph diameter (double BFS), so the walk is always the longest
-  one available.
+  largest connected region is kept. Start and exit are placed far apart with a
+  double BFS (the farthest cell from an arbitrary one, then the farthest cell
+  from that), a cheap approximation of the cave's graph diameter.
 - **Ping** — 540 rays are raycast on the grid (DDA) when the ping is emitted;
   each hit is revealed only when the expanding wavefront actually reaches it,
   so the ring visually gets absorbed where it meets rock.
