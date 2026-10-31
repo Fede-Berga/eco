@@ -13,7 +13,7 @@ touches. When a wave crosses the exit you hear a chime — panned toward it,
 louder the closer you are. Navigate by memory and by ear.
 
 From level 2 onward something else lives in the cave. It is blind too, but it
-hears every ping you emit — and it comes looking. Pings reveal it only as a
+hears your pings through the rock — and it comes looking. Pings reveal it only as a
 snapshot of where it *was*.
 
 ## Run
